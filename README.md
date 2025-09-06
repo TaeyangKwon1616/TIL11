@@ -1308,3 +1308,38 @@ int main(void)
  # 포인터에 const를 사용하는 이유
  변수 a는 어디까지나 포인터를 통해서만 바꿀 수 없으며 변수 a 자체를 사용하면 얼마든지 바꿀 수 있습니다. 이쯤에서 포인터에 const를 사용하는 이유가 궁금해질 겁니다. 포인터에 const를 사용하는 대표적인 예는 문자열 상수를 인수로 받는 함수입니다. 문자열 상수는 값이 바뀌면 안되므로 함수의 매개변수를 통해서 값을 바꿀 수 없도록, 매개변수로 선언된 포인터에 const를 사용합니다.
  ```
+
+
+```c
+#include <stdio.h>
+int main(void)
+{
+    int a =10;
+    const int *pa;
+    pa = &a;
+    
+    
+    *pa = 20;
+    printf("%d\n", a);
+    
+    return 0;
+}
+```
+
+```c
+#include <stdio.h>
+int main(void)
+{
+    int a =10;
+    const int *pa;
+    pa = &a;
+    
+    
+    a = 20;
+    printf("%d\n", a);
+    
+    return 0;
+}
+```
+이건 됨.
+# ㅇㅋ
